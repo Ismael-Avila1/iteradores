@@ -4,7 +4,7 @@
 class cNodo {
 private:
     float dato;
-    cNodo* pAtn;
+    cNodo* pAnt;
     cNodo* pSig;
 
     cNodo();
@@ -14,6 +14,7 @@ private:
     float eliminarAdelante();
 
     friend class cLista;
+    friend class cIterador;
 };
 
 #endif // NODE_H

@@ -2,7 +2,7 @@
 
 cLista::cLista() {
     inicio.pSig = &final;
-    final.pAtn = &inicio;
+    final.pAnt = &inicio;
 }
 
 cLista::~cLista() {
@@ -14,7 +14,7 @@ cLista::~cLista() {
 
         delete temp;
     }
-    final.pAtn = &inicio;
+    final.pAnt = &inicio;
 }
 
 void cLista::insertarAdelante(float d) {
@@ -22,7 +22,7 @@ void cLista::insertarAdelante(float d) {
 }
 
 void cLista::insertarAlFinal(float d) {
-    final.pAtn->insertarAdelante(d);
+    final.pAnt->insertarAdelante(d);
 }
 
 float cLista::eliminarAdelante() {
@@ -36,7 +36,7 @@ float cLista::eliminarAlFinal() {
     if(isEmpty())
         return -1;
     else
-        return final.pAtn->pAtn->eliminarAdelante();
+        return final.pAnt->pAnt->eliminarAdelante();
 }
 
 int cLista::size() {
