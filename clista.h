@@ -25,6 +25,9 @@ public:
     bool isFull();
 
     void imprimir();
+
+    cNodo* begin();
+    cNodo* end();
 };
 
 #endif // CLISTA_H

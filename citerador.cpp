@@ -32,5 +32,4 @@ void cIterador::insertarAdelante(float d) {
 
 float cIterador::eliminarAdelante() {
    return pActual->eliminarAdelante();
-
 }

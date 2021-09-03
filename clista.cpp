@@ -67,3 +67,13 @@ void cLista::imprimir() {
     }
     std::cout << "\b\b\b";
 }
+
+cNodo* cLista::begin() {
+    cNodo* begin = inicio.pSig;
+    return begin;
+}
+
+cNodo* cLista::end() {
+    cNodo* end = &final;
+    return end;
+}
