@@ -1,5 +1,5 @@
 #ifndef CNODO_H
-#define cNODO_H
+#define CNODO_H
 
 class cNodo {
 private:

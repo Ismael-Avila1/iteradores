@@ -74,6 +74,5 @@ cNodo* cLista::begin() {
 }
 
 cNodo* cLista::end() {
-    cNodo* end = &final;
-    return end;
+    return &final;
 }
