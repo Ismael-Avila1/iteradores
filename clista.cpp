@@ -68,11 +68,15 @@ void cLista::imprimir() {
     std::cout << "\b\b\b";
 }
 
-cNodo* cLista::begin() {
-    cNodo* begin = inicio.pSig;
-    return begin;
+cIterador &cLista::begin() {
+    m_itBegin.setNodo(inicio.pSig);
+
+    return m_itBegin;
 }
 
-cNodo* cLista::end() {
-    return &final;
+cIterador &cLista::end() {
+    m_itEnd.setNodo(&final);
+
+    return m_itEnd;
 }
+

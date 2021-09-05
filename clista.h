@@ -3,11 +3,15 @@
 
 #include <iostream>
 #include "cnodo.h"
+#include "citerador.h"
 
 class cLista {
 private:
     cNodo inicio;
     cNodo final;
+
+    cIterador m_itBegin;
+    cIterador m_itEnd;
 
 public:
     cLista();
@@ -26,8 +30,8 @@ public:
 
     void imprimir();
 
-    cNodo* begin();
-    cNodo* end();
+    cIterador& begin();
+    cIterador& end();
 };
 
 #endif // CLISTA_H
