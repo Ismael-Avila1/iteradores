@@ -62,6 +62,12 @@ int main() {
         }
     }
 
+    // imprimr de nuevo
+    for(it.setNodo(lst.begin()); it.getNodo()!=lst.end(); it.avanzar())
+        cout << it.getContenido() << ", ";
+
+    cout << endl << endl;
+
 
     // duplicar
     float duplicarNum = 4;
