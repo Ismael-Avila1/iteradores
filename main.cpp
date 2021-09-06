@@ -22,6 +22,7 @@ int main() {
     lst.insertarAlFinal(4);
     lst.insertarAlFinal(6);
     lst.insertarAlFinal(1);
+    lst.insertarAlFinal(11);
     lst.insertarAlFinal(2);
     lst.insertarAlFinal(34);
     lst.insertarAlFinal(68);
@@ -31,58 +32,78 @@ int main() {
     lst.insertarAlFinal(12);
 
 
-    // imprimr
-    cIterador it;
+   cIterador it;
 
-    for(it.setNodo(lst.begin()); it.getNodo()!=lst.end(); it.avanzar())
-        cout << it.getContenido() << ", ";
+   // Imprimir
+   cout << "Imprimiendo lista..." << endl;
 
-    cout << endl << endl;
+   for(it=lst.begin(); it!=lst.end(); it++)
+        cout << *it << ", ";
 
-
-    // cuente
-    int cont = 0;
-    float num = 68;
-
-    for(it.setNodo(lst.begin()); it.getNodo()!=lst.end(); it.avanzar())
-        if(it.getContenido() == num)
-            cont++;
-    cout << "Hay " << cont << " numero " << num << endl;
-
-    cout << endl << endl;
+   cout << endl << endl;
 
 
+   //Contar
+   int cont = 0;
+   float numAContar = 68;
 
-    // elimine
-    float eliminarNum = 11;
-    for(it.setNodo(lst.begin()); it.getNodo()!=lst.end(); it.avanzar()) {
-        if(it.getContenido() == eliminarNum){
-            it.retroceder();
-            cout << "Eliminando... " <<it.eliminarAdelante() << endl;
-        }
-    }
+   for(it=lst.begin(); it!=lst.end(); it++)
+       if(*it == numAContar)
+           cont++;
+   cout << "Hay " << cont << " " << numAContar << "'s en la lista";
 
-    // imprimr de nuevo
-    for(it.setNodo(lst.begin()); it.getNodo()!=lst.end(); it.avanzar())
-        cout << it.getContenido() << ", ";
-
-    cout << endl << endl;
+   cout << endl << endl;
 
 
-    // duplicar
-    float duplicarNum = 4;
+   // Eliminar
+   float eliminarNum = 11;
 
-    for(it.setNodo(lst.begin()); it.getNodo()!=lst.end(); it.avanzar())
-        if(it.getContenido() == duplicarNum) {
-            it.retroceder();
-            it.insertarAdelante(duplicarNum);
-            it.avanzar();
-            it.avanzar();
-        }
+   for(it=lst.begin(); it!=lst.end(); it++)
+       if(*it == eliminarNum) {
+           it--;
+           it.eliminarAdelante();
+       }
+   cout << "Se eliminaron los " << eliminarNum << " de la lista" << endl;
 
-    // imprimir de nuevo
-    for(it.setNodo(lst.begin()); it.getNodo()!=lst.end(); it.avanzar())
-        cout << it.getContenido() << ", ";
+   // Imprimir
+   for(it=lst.begin(); it!=lst.end(); it++)
+        cout << *it << ", ";
+
+   cout << endl << endl;
+
+
+   // Duplicar
+   float duplicarNum = 4;
+
+   for(it=lst.begin(); it!=lst.end(); it++)
+       if(*it == duplicarNum) {
+           it.insertarAdelante(duplicarNum);
+           it++;
+       }
+
+   cout << "Se duplicaron los " << duplicarNum << " de la lista" << endl;
+
+   // Imprimir
+   for(it=lst.begin(); it!=lst.end(); it++)
+        cout << *it << ", ";
+
+   cout << endl << endl;
+
+
+   // Sustituir
+   float remplazarNum = 4;
+   float remplazarCon = 13;
+
+   for(it=lst.begin(); it!=lst.end(); it++)
+       if(*it == remplazarNum)
+           *it = 13;
+   cout << "Se remplazaron los " << remplazarNum << "' con " << remplazarCon << "' " << endl;
+
+   // Imprimir
+   for(it=lst.begin(); it!=lst.end(); it++)
+        cout << *it << ", ";
+
+   cout << endl << endl;
 
     return 0;
 }
